@@ -1,32 +1,63 @@
-const locale = process.env['locale'] || 'en_US';
-const fields = process.env['info'] || 'stats,items,progression';
-// const guildName = process.env['guild'];
-// const realm = process.env['realm'];
-const targets = (process.env['guilds'] || '').split(',');
-const guildRealmMappings = targets.map((t) => {
-  const [guild, realm] = t.split(':');
-  return { guild, realm };
+const args = process.argv;
+
+const argumentKvp:{[key:string]:string} = {};
+console.log(`args:${args.length}`);
+args.slice(2).forEach((arg) => {
+  console.log(`arg:${arg}`);
+  if (arg.includes('--')) {
+    const argument = arg.substring(2);
+    const [key, val] = argument.split('=');
+    argumentKvp[key] = val;
+  }
 });
 
-const players = process.env['players'];
+const getVariable = (key:string):string | undefined => {
+  return process.env[key] || argumentKvp[key];
+};
+
+const getVariableWithDef = (key:string, def:string):string => {
+  return process.env[key] || argumentKvp[key] || def;
+};
+
+const locale = getVariableWithDef('locale', 'en_US');
+const fields = getVariableWithDef('info', 'stats,items,progression');
+const region = getVariable('region');
+const guilds = getVariable('guilds');
+const players = getVariable('players');
+const blizzApiUrl = `https://${region}.api.blizzard.com`;
+const blizzAuthUrl = `https://${region}.battle.net`;
+const clientId = getVariable('clientid');
+const clientSecret = getVariable('clientsecret');
+const eshosts = getVariable('eshosts');
+
+const guildRealmMappings = guilds ? guilds.split(',').map((t) => {
+  const [guild, realm] = t.split(':');
+  return { guild, realm };
+}) : [];
+
 const playerRealmMappings = players ? players.split(',').map((t) => {
   const [player, realm] = t.split(':');
   return { player, realm };
 }) : [];
 
-const region = process.env['region'];
+const elasticSearchHosts = eshosts ? eshosts.split(',') : [];
 
-if (!guildRealmMappings.length || !region) {
+if ((!guilds && ! players) ||
+  !region ||
+  !clientId ||
+  !clientSecret ||
+  !eshosts) {
   // tslint:disable-next-line:max-line-length
-  const missings = `Missing parameters:${!guildRealmMappings ? 'targets,' : ''}${!region ? 'region' : ''}`;
+  const missings = `Missing parameters:
+  ${!region ? 'region' : ''}
+  ${!guilds ? 'guilds,' : ''}
+  ${!players ? 'players,' : ''}
+  ${!eshosts ? 'eshosts' : ''}
+  ${!clientId ? 'clientid' : ''}
+  ${!clientSecret ? 'clientsecret' : ''}
+  `;
   throw Error(missings);
 }
-
-const blizzApiUrl = `https://${region}.api.blizzard.com`;
-const blizzAuthUrl = `https://${region}.battle.net`;
-const clientId = process.env['clientId'] ;
-const clientSecret = process.env['clientSecret'];
-const elasticSearchHosts = (process.env['esHosts'] || '').split(',');
 
 export default {
   locale,
