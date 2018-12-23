@@ -1,4 +1,3 @@
-import { default as RunOnce } from './lib/poll/run-once';
 import { default as JobPolling } from './lib/poll/poll';
 import { default as GuildJob } from './lib/jobs/guild-job';
 import { default as GuildTask, Guild } from './lib/tasks/guild-task';
