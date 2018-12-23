@@ -1,9 +1,9 @@
 const args = process.argv;
 
 const argumentKvp:{[key:string]:string} = {};
-console.log(`args:${args.length}`);
+
 args.slice(2).forEach((arg) => {
-  console.log(`arg:${arg}`);
+
   if (arg.includes('--')) {
     const argument = arg.substring(2);
     const [key, val] = argument.split('=');
