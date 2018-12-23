@@ -28,7 +28,7 @@ const blizzApiUrl = `https://${region}.api.blizzard.com`;
 const blizzAuthUrl = `https://${region}.battle.net`;
 const clientId = getVariable('clientid');
 const clientSecret = getVariable('clientsecret');
-const eshosts = getVariable('eshosts');
+const eshosts = getVariableWithDef('eshosts', 'localhost:9200');
 
 const guildRealmMappings = guilds ? guilds.split(',').map((t) => {
   const [guild, realm] = t.split(':');
