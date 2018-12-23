@@ -4,6 +4,7 @@ Pulling character stats from Blizzards WoW api and stuffs it into an elasticsear
 
 ## Requirements:
 - Docker
+- Typescript
 - Client id/client secret from Blizzard 
 
 ## Running 
