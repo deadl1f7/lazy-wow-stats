@@ -1,0 +1,29 @@
+{
+  "name": "lazy-wow-stats",
+  "version": "1.0.0",
+  "description": "Pulling character stats from Blizzards WoW api and stuffs it into an elasticsearch index",
+  "main": "app.ts",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/async-polling": "0.0.3",
+    "@types/aws-lambda": "^8.10.15",
+    "@types/elasticsearch": "^5.0.29",
+    "@types/node": "^10.12.12",
+    "@types/request": "^2.48.1",
+    "@types/simple-oauth2": "^2.2.1",
+    "@types/uuid": "^3.4.4",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "async-polling": "^0.2.1",
+    "elasticsearch": "^15.2.0",
+    "request": "^2.88.0",
+    "simple-oauth2": "^2.2.1",
+    "tsutils": "^3.5.2",
+    "uuid": "^3.3.2"
+  }
+}
