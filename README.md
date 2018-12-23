@@ -8,3 +8,5 @@ Pulling character stats from Blizzards WoW api and stuffs it into an elasticsear
 
 ## Running 
 1.  Bring up the E(L)K stack, docker-compose up
+
+more coming soon on
