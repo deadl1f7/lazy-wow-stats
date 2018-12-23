@@ -1,9 +1,9 @@
 const args = process.argv;
 
 const argumentKvp:{[key:string]:string} = {};
-console.log(`args:${args.length}`);
+
 args.slice(2).forEach((arg) => {
-  console.log(`arg:${arg}`);
+
   if (arg.includes('--')) {
     const argument = arg.substring(2);
     const [key, val] = argument.split('=');
@@ -28,7 +28,7 @@ const blizzApiUrl = `https://${region}.api.blizzard.com`;
 const blizzAuthUrl = `https://${region}.battle.net`;
 const clientId = getVariable('clientid');
 const clientSecret = getVariable('clientsecret');
-const eshosts = getVariable('eshosts');
+const eshosts = getVariableWithDef('eshosts', 'localhost:9200');
 
 const guildRealmMappings = guilds ? guilds.split(',').map((t) => {
   const [guild, realm] = t.split(':');
