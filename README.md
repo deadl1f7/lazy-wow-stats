@@ -25,6 +25,8 @@ Omit -- with env
 - **--clientid=** Blizz API clientid
 - **--clientsecret=** Blizz API clientsecret
 - **--eshosts=** Comma separated list of the elasticsearch database (default localhost:9200)
+- **--info=** Comma separated list of the data that will be fetched from the WoW API /character endpoints. 
+(If omitted, defaults: stats,items,progression)
 
 ### Running from the current the dev build
 1.  docker-compose up
