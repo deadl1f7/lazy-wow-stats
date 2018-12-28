@@ -10,8 +10,8 @@ Basically, the sky is the limit of what kind of representations you can achieve.
 
 ## Requirements:
 - Docker
-- Typescript
 - Client id/client secret from Blizzard 
+- (Build) Typescript
 
 ## Running 
 
