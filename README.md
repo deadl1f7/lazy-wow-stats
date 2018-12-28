@@ -9,7 +9,7 @@ Basically, the sky is the limit of what kind of representations you can achieve.
 ![alt text](https://github.com/deadl1f7/lazy-wow-stats/blob/master/elk-utils/dashboard_example.PNG)
 
 ## Requirements:
-- Docker
+- Docker (Can be downloaded from https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 - Client id/client secret from Blizzard 
 - (Build) Typescript
 
