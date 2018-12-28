@@ -1,0 +1,13 @@
+int total = 0; 
+
+
+for(raid in params._source.progression.raids){
+	if(raid.id == 9389){
+		for(boss in raid.bosses){
+			total += boss.heroicKills;
+		}
+	}
+}
+
+
+return total;
