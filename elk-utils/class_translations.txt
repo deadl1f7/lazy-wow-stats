@@ -1,0 +1,39 @@
+if(doc['class'].value == 1){
+return "Warrior"
+}
+if(doc['class'].value == 2){
+return "Paladin"
+}
+if(doc['class'].value == 3){
+return "Hunter"
+}
+if(doc['class'].value == 4){
+return "Rogue"
+}
+if(doc['class'].value == 5){
+return "Priest"
+}
+if(doc['class'].value == 6){
+return "Death knight"
+}
+if(doc['class'].value == 7){
+return "Shaman"
+}
+if(doc['class'].value == 8){
+return "Mage"
+}
+if(doc['class'].value == 9){
+return "Warlock"
+}
+if(doc['class'].value == 10){
+return "Monk"
+}
+if(doc['class'].value == 11){
+return "Druid"
+}
+if(doc['class'].value == 12){
+return "Demon hunter"
+}
+else{
+return "";
+}

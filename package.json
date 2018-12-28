@@ -6,6 +6,10 @@
   "scripts": {
     "start" : "node dist/app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deadl1f7/lazy-wow-stats.git"
+  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
