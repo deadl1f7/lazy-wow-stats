@@ -27,7 +27,7 @@ Omit -- with env
 - **--eshosts=** Comma separated list of the elasticsearch database (default localhost:9200)
 - **--info=** Comma separated list of the data that will be fetched from the WoW API /character endpoints. 
 (If omitted, defaults: stats,items,progression)
-- **--locale=** the data localization (if omitted default: en_us)
+- **--locale=** the data localization (if omitted default: en_US)
 
 ### Running from the current the dev build
 1.  docker-compose up
