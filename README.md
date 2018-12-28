@@ -26,7 +26,7 @@ Omit -- with env
 - **--clientsecret=** Blizz API clientsecret
 - **--eshosts=** Comma separated list of the elasticsearch database (default localhost:9200)
 
-### Running from the current the built
+### Running from the current the dev build
 1.  docker-compose up
 
 ### Alternatively building it yourself:
