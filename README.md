@@ -3,6 +3,9 @@
 Pulling character stats from Blizzards WoW api and stuffs it into an elasticsearch index.
 Using Elasticsearch, we can formulate any kind of visualization for the data retrieved. Examples are Guild Class partition, Item levels, raid kills, active members etc...
 
+Basically, the sky is the limit of what kind of representations you can achieve.
+
+
 ![alt text](https://github.com/deadl1f7/lazy-wow-stats/blob/master/elk-utils/dashboard_example.PNG)
 
 ## Requirements:
