@@ -26,7 +26,12 @@ Omit -- with env
 - **--clientsecret=** Blizz API clientsecret
 - **--eshosts=** Comma separated list of the elasticsearch database (default localhost:9200)
 
+### Running from the current the built
+1.  docker-compose up
+
+### Alternatively building it yourself:
 1.  Bring up the E(L)K stack, docker-compose up
 2.	Build the TS tsc app.ts
 3.	npm start -- --key=value ... (env variables in PS $env:REGION="eu")
 
+Kibana can be found at localhost:5601
