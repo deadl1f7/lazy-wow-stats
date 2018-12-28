@@ -1,6 +1,7 @@
 # lazy-wow-stats
 
-Pulling character stats from Blizzards WoW api and stuffs it into an elasticsearch index
+Pulling character stats from Blizzards WoW api and stuffs it into an elasticsearch index.
+Using Elasticsearch, we can formulate any kind of visualization for the data retrieved. Examples are Guild Class partition, Item levels, raid kills, active members etc...
 
 ## Requirements:
 - Docker
