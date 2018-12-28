@@ -38,3 +38,5 @@ Omit -- with env
 3.	npm start -- --key=value ... (env variables in PS $env:REGION="eu")
 
 Kibana can be found at localhost:5601
+Example dashboard can be imported into Management->saved objects, then import the included in elk-utils/example_dashboard.json
+
