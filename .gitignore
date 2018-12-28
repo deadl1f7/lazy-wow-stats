@@ -61,5 +61,4 @@ typings/
 .next
 
 .vscode/
-dist/
 docker-compose-dev.yml
