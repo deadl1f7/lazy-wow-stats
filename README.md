@@ -30,7 +30,8 @@ Omit -- with env
 - **--locale=** the data localization (if omitted default: en_US)
 
 ### Running from the current the dev build
-1.  edit docker-compose.yml and specify the required values.
+1.  edit docker-compose.yml and specify the required values under lazy-wow-stats environment
+    (guilds,clientid,clientsecret).
 2.  docker-compose up from the project folder.
 
 ### Alternatively building it yourself:
