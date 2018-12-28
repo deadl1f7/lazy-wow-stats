@@ -30,7 +30,8 @@ Omit -- with env
 - **--locale=** the data localization (if omitted default: en_US)
 
 ### Running from the current the dev build
-1.  docker-compose up
+1.  edit docker-compose.yml and specify the required values.
+2.  docker-compose up from the project folder.
 
 ### Alternatively building it yourself:
 1.  Bring up the E(L)K stack, docker-compose up
