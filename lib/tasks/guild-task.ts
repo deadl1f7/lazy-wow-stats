@@ -25,6 +25,10 @@ export default class GuildTask implements Task<Guild>{
   }
 
   perform(): Promise<Guild> {
-    return getRequest(this.action, { fields, locale: environment.locale });
+    return getRequest<Guild>(this.action, { fields, locale: environment.locale }).then((guild) => {
+      const lastModified = new Date(<any>guild.lastModified);
+      guild.lastModified = lastModified;
+      return guild;
+    });
   }
 }

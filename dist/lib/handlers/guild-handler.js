@@ -21,7 +21,7 @@ class GuildHandler {
                 const members = guild['members'];
                 const names = members.map(m => m['character']['name']);
                 // tslint:disable-next-line:max-line-length
-                const characterTasks = names.map(name => new character_task_1.default(name, guild.realm));
+                const characterTasks = names.map(name => new character_task_1.default(name, guild.realm, guild));
                 const job = new character_job_1.default({
                     tag,
                     tasks: characterTasks,

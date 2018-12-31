@@ -11,7 +11,11 @@ class GuildTask {
         this.action = `/wow/guild/${realm}/${guildName}`;
     }
     perform() {
-        return request_1.getRequest(this.action, { fields, locale: environment_1.default.locale });
+        return request_1.getRequest(this.action, { fields, locale: environment_1.default.locale }).then((guild) => {
+            const lastModified = new Date(guild.lastModified);
+            guild.lastModified = lastModified;
+            return guild;
+        });
     }
 }
 exports.default = GuildTask;

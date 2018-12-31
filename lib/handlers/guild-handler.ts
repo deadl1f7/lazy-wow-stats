@@ -23,7 +23,7 @@ export default class GuildHandler implements Handler<Guild>{
         const names = members.map(m => m['character']['name']);
 
       // tslint:disable-next-line:max-line-length
-        const characterTasks = names.map(name => new CharacterTask(name, guild.realm));
+        const characterTasks = names.map(name => new CharacterTask(name, guild.realm, guild));
         const job = new CharacterJob({
           tag,
           tasks: characterTasks,
