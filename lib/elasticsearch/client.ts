@@ -5,6 +5,7 @@ const hosts = environment.elasticSearchHosts;
 
 const elasticsearchClient = new Client({
   hosts,
+  requestTimeout:0,
 });
 
 export default elasticsearchClient;
