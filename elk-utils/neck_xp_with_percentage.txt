@@ -1,0 +1,15 @@
+if(params._source == null || params._source.items == null || params._source.items.neck == null || params._source.items.neck.azeriteItem == null){
+	return 0;
+}
+
+int base = params._source.items.neck.azeriteItem.azeriteLevel;
+double total = (double)base;
+
+float remaining = params._source.items.neck.azeriteItem.azeriteExperienceRemaining;
+float xp  = params._source.items.neck.azeriteItem.azeriteExperience;
+
+ if(xp > 0 && remaining > 0){
+    total = total + Math.round(xp / remaining * 100.0)/100.0;
+}
+
+return total;
