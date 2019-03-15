@@ -14,6 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = __importDefault(require("../elasticsearch/client"));
 const index = 'character';
 const type = 'stats';
+const maxBulk = 50;
 class CharacterHandler {
     handle(param) {
         // tslint:disable-next-line:max-line-length
@@ -26,9 +27,12 @@ class CharacterHandler {
                     bulk.push(c);
                 });
                 console.log(`Bulk inserting ${param.length} characters`);
-                yield client_1.default.bulk({
-                    body: bulk,
-                });
+                let slice = [];
+                while ((slice = bulk.slice(0, maxBulk)).length > 0) {
+                    yield client_1.default.bulk({
+                        body: slice,
+                    });
+                }
                 resolve();
             }
             catch (error) {
