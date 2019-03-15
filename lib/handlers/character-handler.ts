@@ -5,6 +5,7 @@ import { IndexDocumentParams, BulkIndexDocumentsParams } from 'elasticsearch';
 
 const index = 'character';
 const type = 'stats';
+const maxBulk = 50;
 
 export default class CharacterHandler implements Handler<Character>{
 
@@ -19,9 +20,12 @@ export default class CharacterHandler implements Handler<Character>{
           bulk.push(c);
         });
         console.log(`Bulk inserting ${param.length} characters`);
-        await elasticsearchClient.bulk(<BulkIndexDocumentsParams>{
-          body:bulk,
-        });
+        let slice = [];
+        while ((slice = bulk.slice(maxBulk)).length > 0) {
+          await elasticsearchClient.bulk(<BulkIndexDocumentsParams>{
+            body:slice,
+          });
+        }
 
         resolve();
       }catch (error) {

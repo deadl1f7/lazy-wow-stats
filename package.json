@@ -4,7 +4,7 @@
   "description": "Pulling character stats from Blizzards WoW api and stuffs it into an elasticsearch index",
   "main": "app.ts",
   "scripts": {
-    "start" : "node dist/app.js"
+    "start" : "node prod/app.js"
   },
   "repository": {
     "type": "git",
