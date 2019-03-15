@@ -28,7 +28,10 @@ class CharacterHandler {
                 });
                 console.log(`Bulk inserting ${param.length} characters`);
                 let slice = [];
+                let sliceCount = 0;
                 while ((slice = bulk.slice(0, maxBulk)).length > 0) {
+                    sliceCount += slice.length;
+                    console.log(`Inserted ${sliceCount}/${slice.length}`);
                     yield client_1.default.bulk({
                         body: slice,
                     });
