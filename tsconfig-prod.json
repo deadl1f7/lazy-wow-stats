@@ -58,6 +58,8 @@
       "watch": false
     },
     "exclude": [
-      "./dist"
+      "./dist",
+      "./prod"
+
     ]
   }

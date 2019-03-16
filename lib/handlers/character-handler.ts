@@ -21,10 +21,10 @@ export default class CharacterHandler implements Handler<Character>{
         });
         console.log(`Bulk inserting ${param.length} characters`);
         let splice = [];
-        let spliceCount = 0;
+        const bulkLength = bulk.length;
         while ((splice = bulk.splice(0, maxBulk)).length > 0) {
-          spliceCount += splice.length;
-          console.log(`Inserted ${spliceCount}/${bulk.length} players`);
+
+          console.log(`Inserted ${bulkLength - bulk.length}/${bulkLength} players`);
           await elasticsearchClient.bulk(<BulkIndexDocumentsParams>{
             body:splice,
           });
