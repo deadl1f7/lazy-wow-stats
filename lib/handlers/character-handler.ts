@@ -24,7 +24,7 @@ export default class CharacterHandler implements Handler<Character>{
         const bulkLength = bulk.length;
         while ((splice = bulk.splice(0, maxBulk)).length > 0) {
 
-          console.log(`Inserted ${bulkLength - bulk.length}/${bulkLength} players`);
+          console.log(`Inserted ${bulkLength - bulk.length}/${bulkLength} bulk messages`);
           await elasticsearchClient.bulk(<BulkIndexDocumentsParams>{
             body:splice,
           });
